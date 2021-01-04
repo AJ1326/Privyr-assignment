@@ -52,7 +52,7 @@ export class LoginComponent implements OnInit, OnDestroy {
             this.error = '';
           } else {
             log.debug(`${credentials.name} is not allowed`);
-            this.error = '*Please login via mentioned credentials.'
+            this.error = '*Please login via mentioned credentials.';
           }
         },
         (error) => {
@@ -62,15 +62,13 @@ export class LoginComponent implements OnInit, OnDestroy {
       );
   }
 
-  private checkUserRole() {
-
-  }
+  private checkUserRole() {}
 
   private createForm() {
     this.loginForm = this.formBuilder.group({
       username: ['', Validators.required()],
       password: ['', Validators.required()],
-      remember: [true]
+      remember: [true],
     });
   }
 }

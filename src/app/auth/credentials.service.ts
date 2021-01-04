@@ -5,8 +5,8 @@ export interface Credentials {
   name?: string;
   token?: string;
   password?: string;
-  agent_type?: string,
-  isUserExist?: boolean,
+  agent_type?: string;
+  isUserExist?: boolean;
 }
 
 const credentialsKey = 'credentials';

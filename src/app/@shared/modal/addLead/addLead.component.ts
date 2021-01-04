@@ -52,7 +52,7 @@ export class AddLeadComponent implements OnInit, OnDestroy {
       leadData['action_taken_by'] = null;
       leadData['id'] = this.leadService.generateId();
       leadData['created_at'] = this.leadService.getCurrentUTC();
-      leadData['status'] = 'pending'
+      leadData['status'] = 'pending';
       this.isLoading = true;
       this.spinnerService.show();
       // It's just added to show th effect of spinner and how it will reacct if an api call is made.
@@ -75,13 +75,11 @@ export class AddLeadComponent implements OnInit, OnDestroy {
   }
 
   getAddLeadForm() {
-    this.leadForm = this.formBuilder.group(
-      {
-        name: ['', [Validators.required()]],
-        email: [null, [Validators.email()]],
-        comment: [null, []],
-        phone_number: [null, [Validators.numberRequired()]],
-      }
-    );
+    this.leadForm = this.formBuilder.group({
+      name: ['', [Validators.required()]],
+      email: [null, [Validators.email()]],
+      comment: [null, []],
+      phone_number: [null, [Validators.numberRequired()]],
+    });
   }
 }

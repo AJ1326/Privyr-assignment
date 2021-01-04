@@ -11,9 +11,7 @@ export class AddLeadSuccessComponent implements OnInit {
   @Input() title_tag: string;
   @Input() formType: string;
 
-  constructor(
-    public activeModal: NgbActiveModal,
-  ) {}
+  constructor(public activeModal: NgbActiveModal) {}
 
   ngOnInit() {
     setTimeout(() => {

@@ -6,7 +6,6 @@ import leadlist from '../../../assets/sample-lead-list/lead-small.json';
 
 @Injectable()
 export class LeadService {
-
   private leadSource = new BehaviorSubject(leadlist.data);
   currentLeadSource = this.leadSource.asObservable();
 
@@ -46,6 +45,6 @@ export class LeadService {
   }
 
   getCurrentUTC() {
-    return (new Date().getTime()).toString();
+    return new Date().getTime().toString();
   }
 }

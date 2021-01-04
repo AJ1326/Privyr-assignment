@@ -11,13 +11,13 @@
       <div class="d-flex-row-centre d-flex">
         <div class="hide-mobile" [ngSwitch]="lead['status']">
           <ng-container *ngSwitchCase="'accepted'">
-            <img class="status-img lead-status-bg-accepted" src="../../../assets/images/leads/accepted.png">
+            <img class="status-img lead-status-bg-accepted" src="../../../assets/images/leads/accepted.png" />
           </ng-container>
           <ng-container *ngSwitchCase="'rejected'">
-            <img class="status-img lead-status-bg-rejected" src="../../../assets/images/leads/rejected.png">
+            <img class="status-img lead-status-bg-rejected" src="../../../assets/images/leads/rejected.png" />
           </ng-container>
           <ng-container *ngSwitchCase="'pending'">
-            <img class="status-img lead-status-bg-pending" src="../../../assets/images/leads/pending.png">
+            <img class="status-img lead-status-bg-pending" src="../../../assets/images/leads/pending.png" />
           </ng-container>
         </div>
         <h5 class="text-black-1">{{ lead['name'] }}</h5>
@@ -29,28 +29,22 @@
             *ngIf="lead['action_taken_by']['agent_type'] === userData['agent_type']; else other_agent"
             [ngClass]="lead['status'] == 'accepted' ? 'approved-status' : 'rejected-status'"
           >
-            {{ lead['status'] }} by you
-             -
+            {{ lead['status'] }} by you -
             {{ lead['action_taken_at_time'] | date: 'mediumDate' }}
           </span>
           <ng-template #other_agent>
-            <span
-            class="mr-3"
-            [ngClass]="lead['status'] == 'accepted' ? 'approved-status' : 'rejected-status'"
-          >
-            {{ lead['status'] }} by {{ lead['action_taken_by']['name'] }}
-             -
-            {{ lead['action_taken_at_time'] | date: 'mediumDate' }}
-          </span>
+            <span class="mr-3" [ngClass]="lead['status'] == 'accepted' ? 'approved-status' : 'rejected-status'">
+              {{ lead['status'] }} by {{ lead['action_taken_by']['name'] }}
+              -
+              {{ lead['action_taken_at_time'] | date: 'mediumDate' }}
+            </span>
           </ng-template>
         </div>
         <ng-template #other_action>
           <button
             class="btn-save mr-1 btn-accept"
             [disabled]="isLoading"
-            (click)="
-            changeStatusOfLead(lead, 'accept', 'Accept Lead')
-            "
+            (click)="changeStatusOfLead(lead, 'accept', 'Accept Lead')"
           >
             <i class="fas fa-cog fa-spin" *ngIf="isLoading && actionType === 'accept' && accArray.includes(i)"></i>
             Accept
@@ -58,9 +52,7 @@
           <button
             class="btn-stop mr-3 btn-reject"
             [disabled]="isLoading"
-            (click)="
-            changeStatusOfLead(lead, 'reject', 'Reject Lead')
-            "
+            (click)="changeStatusOfLead(lead, 'reject', 'Reject Lead')"
           >
             <i class="fas fa-cog fa-spin" *ngIf="isLoading && actionType === 'reject' && accArray.includes(i)"></i>
             Reject
@@ -90,35 +82,27 @@
         <tbody>
           <tr class="mobile-tr-table">
             <td>
-              <span class="mobile-table-col-heading">
-                Email
-              </span>
+              <span class="mobile-table-col-heading"> Email </span>
               <h4 class="text-black-1 p-3 pr-3 w-240">
                 <i class="fa fa-envelope" aria-hidden="true"></i>
-                {{ (lead['email'] === null || lead['email'] === '') ? '(no email)' : lead['email'] }}
+                {{ lead['email'] === null || lead['email'] === '' ? '(no email)' : lead['email'] }}
               </h4>
             </td>
             <td>
-              <span class="mobile-table-col-heading">
-                Phone Number
-              </span>
+              <span class="mobile-table-col-heading"> Phone Number </span>
               <h4 class="text-black-1 p-3 pr-3 w-240">
                 <i class="fa fa-phone" aria-hidden="true"></i>
-                {{ (lead['phone_number'] === null || lead['phone_number'] === '') ? '(no phone)' : lead['phone_number'] }}
+                {{ lead['phone_number'] === null || lead['phone_number'] === '' ? '(no phone)' : lead['phone_number'] }}
               </h4>
             </td>
             <td>
-              <span class="mobile-table-col-heading">
-                Comment
-              </span>
+              <span class="mobile-table-col-heading"> Comment </span>
               <h4 class="text-black-1 p-3 comment">
-                {{ (lead['comment'] === null || lead['comment'] === '') ? '(no comment)' : lead['comment'] }}
+                {{ lead['comment'] === null || lead['comment'] === '' ? '(no comment)' : lead['comment'] }}
               </h4>
             </td>
             <td>
-              <span class="mobile-table-col-heading">
-                Created At
-              </span>
+              <span class="mobile-table-col-heading"> Created At </span>
               <h4 class="text-black-1 p-3">
                 {{ lead['created_at'] !== null ? (lead['created_at'] | date: 'medium') : '-' }}
               </h4>

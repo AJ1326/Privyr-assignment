@@ -37,9 +37,7 @@ export class SearchComponent implements OnInit, OnDestroy {
   filterLead(event: any) {
     //in a real application, make a request to a remote url with the query and return filtered results, for demo we filter at client side
     let query = event.query;
-    this.filteredLeadList = this.cloneLeadList.filter((o) =>
-      o['name'].toLowerCase().includes(query.toLowerCase())
-    );
+    this.filteredLeadList = this.cloneLeadList.filter((o) => o['name'].toLowerCase().includes(query.toLowerCase()));
     this.LeadService.changeLeadSource(this.filteredLeadList);
   }
 

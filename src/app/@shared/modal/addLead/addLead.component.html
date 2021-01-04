@@ -37,7 +37,9 @@
             type="text"
           />
           <div class="col-12 error-mssg" *ngIf="(f.email.touched || submitted) && f.email.errors">
-            <label for="email" class="text-danger" *ngIf="f.email.errors.email">*Please enter a valid email address.</label>
+            <label for="email" class="text-danger" *ngIf="f.email.errors.email"
+              >*Please enter a valid email address.</label
+            >
           </div>
         </div>
       </div>
@@ -55,7 +57,9 @@
             type="text"
           />
           <div class="col-12 error-mssg" *ngIf="(f.phone_number.touched || submitted) && f.phone_number.errors">
-            <label for="phone_number" class="text-danger" *ngIf="f.phone_number.errors.numberRequired">*Number is required.</label>
+            <label for="phone_number" class="text-danger" *ngIf="f.phone_number.errors.numberRequired"
+              >*Number is required.</label
+            >
           </div>
         </div>
       </div>
@@ -74,7 +78,9 @@
           >
           </textarea>
           <div class="col-12 error-mssg" *ngIf="(f.comment.touched || submitted) && f.comment.errors">
-            <label for="comment" class="text-danger" *ngIf="f.comment.errors.required">*Please enter your comment.</label>
+            <label for="comment" class="text-danger" *ngIf="f.comment.errors.required"
+              >*Please enter your comment.</label
+            >
           </div>
         </div>
       </div>

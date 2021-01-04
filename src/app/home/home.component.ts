@@ -28,16 +28,15 @@ export class HomeComponent implements OnInit {
       .pipe(take(1)) // take() manages unsubscription for us
       .subscribe((result: any) => {
         if (result) {
-          this.openSuccessLeadGenerartionModal()
+          this.openSuccessLeadGenerartionModal();
         }
       });
   }
 
   openSuccessLeadGenerartionModal(): void {
-    this.modalService
-      .custom(CustomDialogComponent, {
-        title: 'Lead Generarted',
-        modalType: 'add-lead-success',
-      })
+    this.modalService.custom(CustomDialogComponent, {
+      title: 'Lead Generarted',
+      modalType: 'add-lead-success',
+    });
   }
 }

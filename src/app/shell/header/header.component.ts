@@ -22,7 +22,7 @@ export class HeaderComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.userName  = this.username;
+    this.userName = this.username;
   }
 
   openSidenav(): void {

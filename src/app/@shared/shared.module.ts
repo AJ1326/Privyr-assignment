@@ -41,7 +41,14 @@ import { MessageService } from 'primeng/api';
     SearchComponent,
     LeadsComponent,
   ],
-  exports: [LoaderComponent, SearchComponent, CustomDialogComponent, ConfirmDialogComponent, AddLeadSuccessComponent, LeadsComponent],
+  exports: [
+    LoaderComponent,
+    SearchComponent,
+    CustomDialogComponent,
+    ConfirmDialogComponent,
+    AddLeadSuccessComponent,
+    LeadsComponent,
+  ],
   providers: [LeadService, SpinnerService, MessageService, AddLeadSuccessComponent],
 })
 export class SharedModule {}

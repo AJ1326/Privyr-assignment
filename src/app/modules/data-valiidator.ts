@@ -10,19 +10,20 @@ export interface DdValidator {
 }
 
 export class ProviderDataValidators {
-  
   static email(): ValidatorFn {
-  return (control: AbstractControl): { [key: string]: any } | null => {
-    if (
-      !/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
-        control.value
-      ) && (control.value !== '' && control.value !== null)
-    ) {
-      return { email: { msg: 'Invalid email address.' } };
-    } else {
-      return null;
-    }
-  };
+    return (control: AbstractControl): { [key: string]: any } | null => {
+      if (
+        !/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+          control.value
+        ) &&
+        control.value !== '' &&
+        control.value !== null
+      ) {
+        return { email: { msg: 'Invalid email address.' } };
+      } else {
+        return null;
+      }
+    };
   }
 
   static numberRequired(): ValidatorFn {

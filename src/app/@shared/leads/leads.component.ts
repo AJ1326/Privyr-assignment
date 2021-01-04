@@ -41,7 +41,7 @@ export class LeadsComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.userData = this.credentialsService.credentials;;
+    this.userData = this.credentialsService.credentials;
     this.leadData = this.leadService.currentLeadSource.subscribe((lead) => {
       this.leads = [...lead];
     });
@@ -82,9 +82,9 @@ export class LeadsComponent implements OnInit, OnDestroy {
     let changedIndex = this.getIndex(this.allLeadList, lead);
     this.allLeadList[changedIndex]['status'] = status + 'ed';
     this.allLeadList[changedIndex]['action_taken_by'] = {
-      "id": this.userData.id,
-      "agent_type": this.userData.agent_type,
-      "name": this.userData.name
+      id: this.userData.id,
+      agent_type: this.userData.agent_type,
+      name: this.userData.name,
     };
     this.allLeadList[changedIndex]['action_taken_at_time'] = this.leadService.getCurrentUTC();
     this.leadService.changeLeadSource(this.allLeadList);

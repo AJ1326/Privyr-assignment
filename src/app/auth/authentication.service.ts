@@ -18,10 +18,7 @@ export interface LoginContext {
   providedIn: 'root',
 })
 export class AuthenticationService {
-  constructor(
-    private credentialsService: CredentialsService,
-    private leadService: LeadService,
-  ) {}
+  constructor(private credentialsService: CredentialsService, private leadService: LeadService) {}
 
   /**
    * Authenticates the user.
@@ -42,24 +39,24 @@ export class AuthenticationService {
   checkUserRole(value: any): any {
     if (value.username === 'AgentA' && value.password === 'admin1234') {
       return {
-        "id": this.leadService.generateId(),
-        "name": "Shivam(Agent A)",
-        "agent_type": value.username,
-        "isUserExist": true,
-        "token": 123456
-      }
+        id: this.leadService.generateId(),
+        name: 'Shivam(Agent A)',
+        agent_type: value.username,
+        isUserExist: true,
+        token: 123456,
+      };
     } else if (value.username === 'AgentB' && value.password === 'admin1234') {
       return {
-        "id": this.leadService.generateId(),
-        "name": "Abhishek(Agent B)",
-        "agent_type": value.username,
-        "isUserExist": true,
-        "token": 123456
-      }
+        id: this.leadService.generateId(),
+        name: 'Abhishek(Agent B)',
+        agent_type: value.username,
+        isUserExist: true,
+        token: 123456,
+      };
     } else {
       return {
-        "isUserExist": false
-      }
+        isUserExist: false,
+      };
     }
   }
 
