@@ -1,0 +1,67 @@
+$white: #fff;
+$black: #000;
+$text-black-1: #415366;
+$text-black-2: #1f2833;
+$text-gray: #6b7e93;
+$text-cyan: #2196f3;
+$page-bg: rgba(107, 126, 147, 0.05);
+$yellow: #ffba00;
+$red: #ff6468;
+$maroon: rgb(128, 0, 0);
+$green: #22ae37;
+$yellow2: #ffd23b;
+
+.text-black-1 {
+  color: $text-black-1;
+}
+
+.text-black-2 {
+  color: $text-black-2;
+}
+
+.text-cyan {
+  color: $text-cyan;
+}
+.text-cyan-force {
+  color: $text-cyan !important;
+}
+.text-gray {
+  color: $text-gray;
+}
+.text-white {
+  color: $white;
+}
+.pr-page-bg-color {
+  background-color: $page-bg;
+}
+
+.bg-yellow {
+  background-color: $yellow;
+}
+
+.bg-yellow-2 {
+  background-color: $yellow2;
+}
+
+.bg-red {
+  background-color: $red;
+}
+
+.bg-maroon {
+  background-color: $maroon;
+}
+
+//Custom : defined css
+.error-danger {
+  color: red;
+}
+.bg-green {
+  background-color: $green;
+}
+.success-msg {
+  color: green;
+}
+
+.bg-gray {
+  background-color: $text-gray;
+}

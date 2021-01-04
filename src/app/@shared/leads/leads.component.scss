@@ -1,0 +1,60 @@
+.fa {
+  vertical-align: middle;
+}
+
+.text-danger {
+  margin-top: 10px;
+}
+
+.approved-status {
+  font-size: 16px;
+}
+
+.rejected-status {
+  font-size: 16px;
+}
+
+.status-img {
+  width: 60px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.lead-status-bg-pending {
+  background-color: #ffc1072b;
+}
+
+.lead-status-bg-rejected {
+  background-color: #f4433630;
+}
+
+.lead-status-bg-accepted {
+  background-color: #28a74530;
+}
+
+.d-flex-row-centre {
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.d-flex {
+  display: flex;
+}
+
+table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.td-comment {
+  width: 300px;
+}
+
+.comment {
+  overflow: hidden;
+  width:auto;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

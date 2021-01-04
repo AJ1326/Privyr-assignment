@@ -1,0 +1,90 @@
+<app-spinner></app-spinner>
+<div>
+  <div class="modal-header pr-modal-header">
+    <h4 class="modal-title font-weight-bold text-black-1">{{ title_tag }}</h4>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="leadForm" novalidate>
+      <div class="row mt-3">
+        <div class="col-4">
+          <label for="name" class="text-black-1">Name</label>
+        </div>
+        <div class="input-group col-8">
+          <input
+            id="name"
+            class="form-control pr-input"
+            placeholder="*Name"
+            formControlName="name"
+            name="name"
+            type="text"
+          />
+          <div class="col-12 error-mssg" *ngIf="(f.name.touched || submitted) && f.name.errors">
+            <label for="name" class="text-danger" *ngIf="f.name.errors.required">*Name is required.</label>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-4">
+          <label for="email" class="text-black-1">Email</label>
+        </div>
+        <div class="input-group col-8">
+          <input
+            id="email"
+            class="form-control pr-input"
+            placeholder="Email Address"
+            formControlName="email"
+            name="email"
+            type="text"
+          />
+          <div class="col-12 error-mssg" *ngIf="(f.email.touched || submitted) && f.email.errors">
+            <label for="email" class="text-danger" *ngIf="f.email.errors.email">*Please enter a valid email address.</label>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-4">
+          <label for="phone_number" class="text-black-1">Phone number</label>
+        </div>
+        <div class="input-group col-8">
+          <input
+            id="phone_number"
+            class="form-control pr-input"
+            placeholder="Phone Number"
+            formControlName="phone_number"
+            name="phone_number"
+            type="text"
+          />
+          <div class="col-12 error-mssg" *ngIf="(f.phone_number.touched || submitted) && f.phone_number.errors">
+            <label for="phone_number" class="text-danger" *ngIf="f.phone_number.errors.numberRequired">*Number is required.</label>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-4">
+          <label for="name" class="text-black-1">Comment</label>
+        </div>
+        <div class="input-group col-8">
+          <textarea
+            id="comment"
+            class="form-control pr-input pr-comment-section"
+            placeholder="Please share your requirements or comments here."
+            formControlName="comment"
+            name="comment"
+            type="text"
+          >
+          </textarea>
+          <div class="col-12 error-mssg" *ngIf="(f.comment.touched || submitted) && f.comment.errors">
+            <label for="comment" class="text-danger" *ngIf="f.comment.errors.required">*Please enter your comment.</label>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer border-0 pr-modal-footer">
+    <button class="btn-cancel ml-4 w-100" (click)="activeModal.close(false)" ngbAutoFocus>Cancel</button>
+    <button class="btn-save ml-4 w-100" *ngIf="!isLoading" (click)="save()">Submit</button>
+    <button class="btn-save ml-4 w-100" disabled *ngIf="isLoading">
+      <i class="fa fa-spinner fa-spin" style="font-size: 16px"></i>
+    </button>
+  </div>
+</div>

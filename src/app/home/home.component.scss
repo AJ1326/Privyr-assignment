@@ -1,0 +1,19 @@
+.mt-50 {
+  margin-top: 50px;
+}
+
+.search-centre {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lead-table-padding {
+  padding: 2rem 2rem 2rem 2rem;
+}
+
+@media screen and (max-width: 700px) {
+  .lead-table-padding {
+    padding: 0;
+  }
+}

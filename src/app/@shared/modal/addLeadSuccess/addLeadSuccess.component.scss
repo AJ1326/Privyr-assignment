@@ -1,0 +1,18 @@
+.d-flex-col-centre {
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.d-flex img {
+  width: 90px;
+}
+
+.d-flex span {
+  margin: 15px;
+  font-size: 20px;
+}

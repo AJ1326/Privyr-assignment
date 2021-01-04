@@ -1,0 +1,22 @@
+<div class="row mt-50">
+  <div class="col setting-actions justify-content-between d-flex h-70 align-items-center">
+    <h2 class="text-cyan m-0">Leads generated</h2>
+    <div>
+      <button class="btn-add ml-4" (click)="openAddLeadForm('add')"><i class="fa fa-plus"></i>Add Lead</button>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <div class="table_wrapper my-5 mx-3 search-centre">
+      <app-search></app-search>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <div class="table_wrapper my-5 mx-3 lead-table-padding">
+      <app-leads-list></app-leads-list>
+    </div>
+  </div>
+</div>

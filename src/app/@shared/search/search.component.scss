@@ -1,0 +1,14 @@
+.fa {
+  vertical-align: middle;
+}
+
+:host {
+  ::ng-deep .p-inputtext {
+    width: 400px !important;
+  }
+  @media (max-width: 991px) {
+    ::ng-deep .p-inputtext {
+      width: 336px !important;
+    }
+  }
+}

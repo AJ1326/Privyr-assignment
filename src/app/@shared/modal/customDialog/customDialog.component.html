@@ -1,0 +1,8 @@
+<div [ngSwitch]="modalType">
+  <div *ngSwitchCase="'add-lead'">
+    <app-add-lead [title_tag]="title" [formType]="formType" [form_data]="formData"></app-add-lead>
+  </div>
+  <div *ngSwitchCase="'add-lead-success'">
+    <app-lead-success [title_tag]="title" [formType]="formType"></app-lead-success>
+  </div>
+</div>

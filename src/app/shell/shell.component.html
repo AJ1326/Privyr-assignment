@@ -1,0 +1,5 @@
+<ng-container>
+  <app-shell-header (sidenavMessageEvent)="receiveMessage($event)"></app-shell-header>
+  <app-shell-sidenav [sidenavChildMessage]="message"></app-shell-sidenav>
+  <router-outlet></router-outlet>
+</ng-container>

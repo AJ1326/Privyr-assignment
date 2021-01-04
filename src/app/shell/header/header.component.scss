@@ -1,0 +1,105 @@
+.pr-top-nav-bar {
+  height: 50px;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  background-color: #ffffff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1000;
+  .pr-logo-top {
+    height: 25px;
+    object-fit: contain;
+    margin-left: 0px;
+    margin-top: 12.5px;
+    @media (min-width: 992px) {
+      margin-left: 40px;
+    }
+  }
+
+  .btn-notification {
+    height: 50px;
+    padding-top: 10px;
+    button {
+      padding: 0;
+      border: 0;
+      outline: 0;
+      background: none;
+      i {
+        position: relative;
+        top: 2px;
+      }
+      &::after {
+        display: none;
+      }
+    }
+    .dropdown-menu {
+      padding: 0;
+      margin: 0;
+      top: 15px !important;
+    }
+  }
+
+  .btn-user-account {
+    height: 50px;
+    padding-top: 10px;
+    button {
+      padding: 0;
+      border: 0;
+      outline: 0;
+      background: none;
+
+      &::after {
+        display: none;
+      }
+    }
+    .dropdown-menu {
+      padding: 0;
+      margin: 0;
+      top: 15px !important;
+    }
+    a {
+      display: block;
+      margin: 5px;
+      padding: 6px;
+      border-radius: 3px;
+      background-color: transparent;
+      font-size: 11px;
+      color: #425365;
+      line-height: 1;
+
+      i {
+        margin-right: 4px;
+        color: rgba(66, 83, 101, 0.71);
+        margin-left: 2px;
+      }
+
+      span {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        background-color: #d6dce2;
+        border-radius: 12px;
+        margin-right: 6px;
+        position: relative;
+        top: 1px;
+      }
+
+      &.active {
+        background-color: #3c9ff33b;
+        color: #05639a;
+
+        span {
+          background-color: #2196f3;
+        }
+      }
+    }
+  }
+}
+
+.data-hover {
+  cursor: pointer;
+}

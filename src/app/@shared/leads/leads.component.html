@@ -1,0 +1,138 @@
+<p-toast></p-toast>
+<app-spinner></app-spinner>
+<div class="col remove-pd" *ngIf="leads !== null; else no_leads_found">
+  <div
+    class="pr-accordian mx-auto wm-1000 mt-4"
+    [ngClass]="!accArray.includes(i) ? '' : 'expand'"
+    *ngFor="let lead of leads; let i = index"
+    [attr.data-index]="i"
+  >
+    <div class="acc-header d-flex justify-content-between">
+      <div class="d-flex-row-centre d-flex">
+        <div class="hide-mobile" [ngSwitch]="lead['status']">
+          <ng-container *ngSwitchCase="'accepted'">
+            <img class="status-img lead-status-bg-accepted" src="../../../assets/images/leads/accepted.png">
+          </ng-container>
+          <ng-container *ngSwitchCase="'rejected'">
+            <img class="status-img lead-status-bg-rejected" src="../../../assets/images/leads/rejected.png">
+          </ng-container>
+          <ng-container *ngSwitchCase="'pending'">
+            <img class="status-img lead-status-bg-pending" src="../../../assets/images/leads/pending.png">
+          </ng-container>
+        </div>
+        <h5 class="text-black-1">{{ lead['name'] }}</h5>
+      </div>
+      <div class="d-flex align-items-center">
+        <div *ngIf="lead['status'] !== 'pending'; else other_action">
+          <span
+            class="mr-3"
+            *ngIf="lead['action_taken_by']['agent_type'] === userData['agent_type']; else other_agent"
+            [ngClass]="lead['status'] == 'accepted' ? 'approved-status' : 'rejected-status'"
+          >
+            {{ lead['status'] }} by you
+             -
+            {{ lead['action_taken_at_time'] | date: 'mediumDate' }}
+          </span>
+          <ng-template #other_agent>
+            <span
+            class="mr-3"
+            [ngClass]="lead['status'] == 'accepted' ? 'approved-status' : 'rejected-status'"
+          >
+            {{ lead['status'] }} by {{ lead['action_taken_by']['name'] }}
+             -
+            {{ lead['action_taken_at_time'] | date: 'mediumDate' }}
+          </span>
+          </ng-template>
+        </div>
+        <ng-template #other_action>
+          <button
+            class="btn-save mr-1 btn-accept"
+            [disabled]="isLoading"
+            (click)="
+            changeStatusOfLead(lead, 'accept', 'Accept Lead')
+            "
+          >
+            <i class="fas fa-cog fa-spin" *ngIf="isLoading && actionType === 'accept' && accArray.includes(i)"></i>
+            Accept
+          </button>
+          <button
+            class="btn-stop mr-3 btn-reject"
+            [disabled]="isLoading"
+            (click)="
+            changeStatusOfLead(lead, 'reject', 'Reject Lead')
+            "
+          >
+            <i class="fas fa-cog fa-spin" *ngIf="isLoading && actionType === 'reject' && accArray.includes(i)"></i>
+            Reject
+          </button>
+        </ng-template>
+        <button class="ml-1 mr-3 btn-acc-toggle" (click)="toggleDetails(i)">
+          <i
+            [ngClass]="!accArray.includes(i) ? 'fas fa-chevron-down text-black-2' : 'fas fa-chevron-up text-black-2'"
+          ></i>
+        </button>
+      </div>
+    </div>
+    <div class="acc-body px-3">
+      <table class="w-100p table-2">
+        <thead class="hide-mobile">
+          <tr>
+            <td>
+              <h4 class="font-weight-bold text-black-2 p-3">Email</h4>
+            </td>
+            <td><h4 class="font-weight-bold text-black-2 p-3">Phone Number</h4></td>
+            <td class="td-comment"><h4 class="font-weight-bold text-black-2 p-3">Comment</h4></td>
+            <td>
+              <h4 class="font-weight-bold text-black-2 p-3">Created At</h4>
+            </td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="mobile-tr-table">
+            <td>
+              <span class="mobile-table-col-heading">
+                Email
+              </span>
+              <h4 class="text-black-1 p-3 pr-3 w-240">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                {{ (lead['email'] === null || lead['email'] === '') ? '(no email)' : lead['email'] }}
+              </h4>
+            </td>
+            <td>
+              <span class="mobile-table-col-heading">
+                Phone Number
+              </span>
+              <h4 class="text-black-1 p-3 pr-3 w-240">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                {{ (lead['phone_number'] === null || lead['phone_number'] === '') ? '(no phone)' : lead['phone_number'] }}
+              </h4>
+            </td>
+            <td>
+              <span class="mobile-table-col-heading">
+                Comment
+              </span>
+              <h4 class="text-black-1 p-3 comment">
+                {{ (lead['comment'] === null || lead['comment'] === '') ? '(no comment)' : lead['comment'] }}
+              </h4>
+            </td>
+            <td>
+              <span class="mobile-table-col-heading">
+                Created At
+              </span>
+              <h4 class="text-black-1 p-3">
+                {{ lead['created_at'] !== null ? (lead['created_at'] | date: 'medium') : '-' }}
+              </h4>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<ng-template #no_leads_found>
+  <div class="noLeadFound d-flex-col d-flex-centre">
+    <span> No lead found with the given name. </span>
+    <img src="../../../assets/images/noLead/no-lead-found.svg" />
+  </div>
+</ng-template>

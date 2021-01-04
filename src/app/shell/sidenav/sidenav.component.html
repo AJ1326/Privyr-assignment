@@ -1,0 +1,23 @@
+<div class="pr-sidebar" [ngClass]="closeSideNav ? 'pr-sidebar d-none' : 'pr-sidebar'">
+  <ul class="mt-4 mt-lg-0">
+    <li>
+      <a routerLink="/home" routerLinkActive="active">
+        <img src="../../../assets/images/core/dashboard.svg" class="sidebar-icon" />
+        Home
+      </a>
+    </li>
+    <li>
+      <a routerLink="/documention" routerLinkActive="active">
+        <img src="../../../assets/images/core/events.svg" class="sidebar-icon" />
+        Documentation
+      </a>
+    </li>
+    <li>
+      <a routerLink="/about" routerLinkActive="active">
+        <img style="width: 20px" src="../../../assets/images/core/problem.png" class="sidebar-icon" />
+        Problem
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="sidenav-black" *ngIf="!closeSideNav"></div>

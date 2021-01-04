@@ -1,0 +1,47 @@
+h1 {
+  font-size: 21px;
+}
+h2 {
+  font-size: 18px;
+}
+h3 {
+  font-size: 16px;
+}
+h4 {
+  font-size: 14px;
+}
+h5 {
+  font-size: 14px;
+}
+h6,
+p,
+label,
+span,
+small {
+  font-size: 12px;
+}
+a {
+  font-size: 12px;
+  &:hover {
+    text-decoration: none;
+  }
+  &.text-black-2 {
+    line-height: 1;
+    &:hover {
+      color: $text-black-2;
+    }
+  }
+  &.text-cyan {
+    line-height: 1;
+    &:hover {
+      color: $text-cyan;
+    }
+  }
+  &.link-1 {
+    font-size: 14px;
+    text-decoration: underline;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

@@ -1,0 +1,188 @@
+@mixin btn {
+  font-size: 14px;
+  font-weight: normal;
+  width: 100px;
+  height: 30px;
+  line-height: 1;
+  text-align: center;
+  border-radius: 5px;
+  outline: none;
+  box-sizing: border-box;
+  cursor: pointer;
+  &:active,
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+.btn-cancel {
+  background-color: $white;
+  color: #6b7e93;
+  @include btn;
+
+  &:hover {
+    background-color: #f0f2f4;
+    color: #6b7e93;
+  }
+
+  &:active {
+    background-color: #dadce1;
+    color: #6b7e93;
+  }
+}
+
+.btn-disabled {
+  background-color: #b7e2e8;
+  color: $white;
+  @include btn;
+
+  &:hover {
+    background-color: #b7e2e8;
+    color: $white;
+  }
+
+  &:active {
+    background-color: #b7e2e8;
+    color: $white;
+  }
+}
+
+.btn-save {
+  background-color: #2196f3;
+  color: $white;
+  @include btn;
+
+  &:hover {
+    background-color: #0b7ad1;
+    color: $white;
+  }
+
+  &:active {
+    background-color: #05639a;
+    color: $white;
+  }
+}
+
+.btn-submit {
+  background-color: #ed9a11;
+  color: $white;
+  @include btn;
+
+  &:hover {
+    background-color: #db941f;
+    color: $white;
+  }
+
+  &:active {
+    background-color: #b08132;
+    color: $white;
+  }
+}
+
+.btn-submit-disabled {
+  background-color: #ed9a11;
+  color: $white;
+  cursor: no-drop !important;
+  opacity: 0.5;
+  @include btn;
+
+  &:hover {
+    background-color: #db941f;
+    color: $white;
+  }
+}
+
+.btn-stop {
+  background-color: #ff6468;
+  color: $white;
+  @include btn;
+
+  &:hover {
+    background-color: #ff6468;
+    color: $white;
+  }
+
+  &:active {
+    background-color: #ff6468;
+    color: $white;
+  }
+}
+
+.btn-test {
+  background-color: $white;
+  color: #ed9a11;
+  border: solid 1px #ed9a11;
+  @include btn;
+
+  &:hover {
+    background-color: #fdf5e6;
+    color: #ed9a11;
+  }
+
+  &:active {
+    background-color: #fdebcf;
+    color: #ed9a11;
+  }
+}
+
+.btn-add {
+  background-color: $white;
+  color: #2196f3;
+  border: solid 1px #2196f3;
+  @include btn;
+  width: auto;
+  padding: 0 12px;
+
+  i {
+    color: #2196f3;
+    margin-right: 12px;
+  }
+
+  &:hover {
+    background-color: rgba(77, 183, 198, 0.1);
+    color: #2196f3;
+  }
+
+  &:active {
+    background-color: rgba(77, 183, 198, 0.2);
+    color: #2196f3;
+  }
+}
+.btn-time {
+  min-width: 135px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: rgba(77, 183, 198, 0.2);
+  padding: 6px 10px;
+  font-size: 14px;
+  i {
+    color: #2196f3;
+    font-size: 11px;
+  }
+}
+.btn-s3-link {
+  min-width: 130px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: #ed9a11;
+  font-size: 14px;
+  padding: 6px 10px;
+  cursor: pointer;
+  i {
+    font-size: 11px;
+    padding-right: 4px;
+  }
+}
+.btn-edit {
+  color: #2196f3;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+.btn-small {
+  height: 20px !important;
+}

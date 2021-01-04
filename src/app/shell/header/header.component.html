@@ -1,0 +1,21 @@
+<div class="pr-top-nav-bar">
+  <div class="d-flex align-items-flex-start">
+    <i class="fas fa-bars text-gray d-inline-block py-3 px-4" (click)="openSidenav()"></i>
+    <a routerLink="/" class="d-inline-block">
+      <img src="../../../assets/images/logo/logo-privyr.svg" class="pr-logo-top" />
+    </a>
+  </div>
+
+  <div>
+    <div ngbDropdown class="d-inline-block btn-user-account mx-4" placement="bottom-right">
+      <button class="" id="dropdownForm1" ngbDropdownToggle>
+        <img src="../../../assets/images/core/user-avatar.svg" class="user-avatar" />
+      </button>
+      <div ngbDropdownMenu aria-labelledby="dropdownForm1">
+        <a class="active"> <span class="org_dot"></span>{{userName}}</a>
+        <div class="dropdown-divider"></div>
+        <a class="data-hover" (click)="logout()" translate><i class="fas fa-power-off"></i> Sign Out</a>
+      </div>
+    </div>
+  </div>
+</div>

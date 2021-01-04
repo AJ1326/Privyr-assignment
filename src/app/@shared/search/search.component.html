@@ -1,0 +1,11 @@
+<p-autoComplete
+  [(ngModel)]="selectedLead"
+  [suggestions]="filteredLeadList"
+  (completeMethod)="filterLead($event)"
+  placeholder="Search by client first name (Min. 2 characters)"
+  (onSelect)="onSelectLeadFunc($event)"
+  (onClear)="onUnSelectLeadFunc()"
+  field="name"
+  [minLength]="2"
+>
+</p-autoComplete>
