@@ -58,3 +58,22 @@ table {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+.noLeadFound {
+  padding: 20px;
+}
+
+.noLeadFound span {
+  font-size: 16px;
+  margin-bottom: 2rem;
+}
+
+.noLeadFound img {
+  width: 500px;
+}
+
+@media screen and (max-width: 700px) {
+  .noLeadFound img {
+    width: 300px;
+  }
+}

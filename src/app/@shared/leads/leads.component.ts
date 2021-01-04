@@ -43,7 +43,7 @@ export class LeadsComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.userData = this.credentialsService.credentials;
     this.leadData = this.leadService.currentLeadSource.subscribe((lead) => {
-      this.leads = [...lead];
+      this.leads = lead.length > 0 ? [...lead] : null;
     });
     this.leadOriginalData = this.leadService.currentLeadOriginalSource.subscribe((lead) => {
       this.allLeadList = [...lead];
